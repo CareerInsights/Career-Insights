@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Para títulos (Quicksand) y subtítulos/contenido (Ubuntu) */
+.font-quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+.font-ubuntu-regular {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+.font-ubuntu-light {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
