@@ -1,54 +1,27 @@
-# React + TypeScript + Vite
+# Career Insights
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Decide tu futuro profesional con datos y propósito.**  
+Career Insights es una plataforma diseñada para apoyar a los orientadores escolares, ofreciendo a estudiantes y familias una guía moderna, ágil y basada en datos reales del mercado laboral.
 
-Currently, two official plugins are available:
+## 🌟 Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Pruebas de intereses y aptitudes basadas en CHASIDE.
+- Itinerarios profesionales personalizados y adaptados a cada estudiante.
+- Panel de control para orientadores con herramientas de seguimiento.
+- Resultados inmediatos, informes descargables y soporte a orientadores.
+- Cumplimiento total con el RGPD.
 
-## Expanding the ESLint configuration
+## 🧰 Tecnologías utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚡ [Vite](https://vitejs.dev/) — Bundler rápido para desarrollo moderno.
+- ⚛️ [React](https://react.dev/) — Librería para la construcción de interfaces.
+- 🧠 [TypeScript](https://www.typescriptlang.org/) — Tipado estático para mayor seguridad.
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) — Framework de estilos utilitario.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠 Instalación local
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+```bash
+git clone https://github.com/Luisgr10/Career-Insights.git
+cd career-insights
+npm install
+npm run dev
