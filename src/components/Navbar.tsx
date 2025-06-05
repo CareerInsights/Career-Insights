@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const rightItems = filteredItems.slice(2);
 
   return (
-    <nav className="flex items-center justify-center px-8 py-4 border-t-2 border-b-2 border-pink-400">
+    <nav className="flex items-center justify-center px-8 py-4 border-b-2 border-border-navbar">
       {/* Left Side */}
       <div className="flex space-x-8">
         {leftItems.map(item => (
@@ -23,28 +23,16 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Center - Logo */}
-      {/* <div className="flex items-center space-x-2 mx-12">
-        <div className="flex flex-col  space-y-2">
-  <span className="text-4xl font-bold text-career font-chloe items-start text-center">
-    Career <br /> Insights
-  </span>
-
-  <div className="flex justify-center items-center space-x-1">
-    <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
-    <span className="w-3 h-3 bg-pink-400 rounded-full"></span>
-    <span className="w-3 h-3 bg-teal-400 rounded-full"></span>
-  </div>
-</div>
-      </div> */}
       <div className="flex items-center space-x-2 mx-12">
       <span className="text-4xl font-bold text-career font-chloe">
     Career Insights
   </span>
 
   <div className="flex space-x-1">
-    <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
-    <span className="w-3 h-3 bg-pink-400 rounded-full"></span>
-    <span className="w-3 h-3 bg-teal-400 rounded-full"></span>
+    <span className="w-3 h-3 bg-logo-uno rounded-full"></span>
+    <span className="w-3 h-3 bg-logo-dos rounded-full"></span>
+    <span className="w-3 h-3 bg-logo-tres rounded-full"></span>
+    <span className="w-3 h-3 bg-logo-cuatro rounded-full"></span>
   </div>
   </div>
 
