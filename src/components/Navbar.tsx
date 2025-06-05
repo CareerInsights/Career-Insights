@@ -23,14 +23,30 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Center - Logo */}
+      {/* <div className="flex items-center space-x-2 mx-12">
+        <div className="flex flex-col  space-y-2">
+  <span className="text-4xl font-bold text-career font-chloe items-start text-center">
+    Career <br /> Insights
+  </span>
+
+  <div className="flex justify-center items-center space-x-1">
+    <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
+    <span className="w-3 h-3 bg-pink-400 rounded-full"></span>
+    <span className="w-3 h-3 bg-teal-400 rounded-full"></span>
+  </div>
+</div>
+      </div> */}
       <div className="flex items-center space-x-2 mx-12">
-        <span className="text-2xl font-bold text-pink-400">Career Insights</span>
-        <div className="flex space-x-1">
-          <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
-          <span className="w-3 h-3 bg-pink-400 rounded-full"></span>
-          <span className="w-3 h-3 bg-teal-400 rounded-full"></span>
-        </div>
-      </div>
+      <span className="text-4xl font-bold text-career font-chloe">
+    Career Insights
+  </span>
+
+  <div className="flex space-x-1">
+    <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
+    <span className="w-3 h-3 bg-pink-400 rounded-full"></span>
+    <span className="w-3 h-3 bg-teal-400 rounded-full"></span>
+  </div>
+  </div>
 
       {/* Right Side */}
       <div className="flex space-x-8">
