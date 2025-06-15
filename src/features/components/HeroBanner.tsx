@@ -1,5 +1,6 @@
 import React from "react";
 import banner from "../../assets/image/Selecting team-rafiki.svg"
+import { Link } from "react-router-dom";
 
 const HeroBanner: React.FC = () => {
     return (
@@ -21,9 +22,11 @@ const HeroBanner: React.FC = () => {
               REALMENTE
               IMPORTA.
             </h1>
+            <Link to={"/metodo"}>
             <button className="mt-2 flex items-center gap-2 bg-logo-dos text-black font-semibold px-8 py-3 rounded-full shadow hover:bg-yellow-200 transition text-xl">
               Descubre cómo
             </button>
+            </Link>
           </div>
         </div>
       </div>
