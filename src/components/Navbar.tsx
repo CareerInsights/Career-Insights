@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from './NavLink';
-import { navItems } from '../features/chaside/data/navItems';
+import { navItems } from '../features/data/navItems';
 import { useAuth } from '../context/AuthContext';
 
 const Navbar: React.FC = () => {
