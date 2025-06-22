@@ -1,7 +1,7 @@
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-blue-400 text-white py-8">
+    <footer className="bg-[#85A9D2] text-white py-8">
       <div className="flex items-start justify-between w-full   px-8">
         {/* Left Side - Logo and Privacy/Terms */}
         <div className="flex flex-col space-y-4">
