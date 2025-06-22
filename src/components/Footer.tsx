@@ -14,8 +14,8 @@ const Footer: React.FC = () => {
         {/* Center - Links */}
         <div className="flex justify-center ">
           <a href="/metodo" className="hover:text-gray-200 m-5">Método</a>
-          <a href="#conocenos" className="hover:text-gray-200 m-5">Conócenos</a>
-          <a href="#servicios" className="hover:text-gray-200 m-5">Servicio</a>
+          <a href="/#conocenos" className="hover:text-gray-200 m-5">Conócenos</a>
+          <a href="/#servicios" className="hover:text-gray-200 m-5">Servicio</a>
           <a href="/contacto" className="hover:text-gray-200 m-5">Contacto</a>
         </div>
 
