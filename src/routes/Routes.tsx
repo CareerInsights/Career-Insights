@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import TestOrientacion from "../features/pages/TestOrientacion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Contact from "../pages/Contact";
 
 
 const AppRoutes = () => (
@@ -12,6 +13,7 @@ const AppRoutes = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/test" element={<TestOrientacion />} />
+      <Route path="/contacto" element={<Contact />} />
     </Routes>
     <Footer></Footer>
   </BrowserRouter>
