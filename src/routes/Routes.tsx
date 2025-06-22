@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "../pages/Home";
-import Test from "../features/pages/Test";
+import TestOrientacion from "../features/pages/TestOrientacion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -11,7 +11,7 @@ const AppRoutes = () => (
   <Navbar></Navbar>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/test" element={<Test />} />
+      <Route path="/test" element={<TestOrientacion />} />
     </Routes>
     <Footer></Footer>
   </BrowserRouter>
