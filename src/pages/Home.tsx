@@ -1,5 +1,4 @@
 import "../styles/index.css"
-import { ButtonLink } from "../components/ButtonLink"
 import HeroBanner from "../features/components/HeroBanner"
 import GoalsSection from "../components/GoalsSection"
 import AboutSection from "../components/AboutSection"
@@ -13,10 +12,6 @@ function Home() {
       <GoalsSection />
       <AboutSection />
       <SessionSelector/>
-      <h1 className="text-3xl font-bold underline text-gray-800">
-        Test de orientación laboral
-      </h1>
-      <ButtonLink to="/test">Realizar</ButtonLink>
     </div>
   )
 }

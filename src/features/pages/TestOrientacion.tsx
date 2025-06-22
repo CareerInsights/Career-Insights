@@ -13,6 +13,7 @@ export default function TestOrientacion() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});
   const [showResult, setShowResult] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   const qids = Object.keys(QUESTIONS).map(Number);
   const currentQid = qids[currentIndex];
@@ -91,6 +92,32 @@ export default function TestOrientacion() {
   };
 
   const results = getResults();
+
+  if (showIntro) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gray-50">
+        <div className="w-full max-w-xl bg-white p-8 rounded-lg shadow-md text-center">
+          <h1 className="text-3xl font-bold mb-4 text-gray-800">Test CHASIDE de Orientación Vocacional</h1>
+          <p className="mb-4 text-lg">
+            Este test te ayudará a identificar tus intereses y aptitudes profesionales según el modelo CHASIDE. 
+            Responde sinceramente a cada pregunta para obtener un resultado personalizado.
+          </p>
+          <p className="mb-2 text-md">
+            <strong>Número de preguntas:</strong> 98
+          </p>
+          <p className="mb-6 text-md">
+            <strong>Tiempo estimado:</strong> 10-15 minutos
+          </p>
+          <button
+            onClick={() => setShowIntro(false)}
+            className="px-6 py-3 bg-[var(--color-logo-cuatro)] hover:bg-[var(--color-logo-tres)] text-white rounded-lg font-semibold transition"
+          >
+            Comenzar test
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gray-50">

@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from './NavLink';
 import { navItems } from '../features/data/navItems';
 import { useAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const { isLoggedIn } = useAuth();
@@ -23,6 +24,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Center - Logo */}
+      <Link to={"/"}>
       <div className="flex items-center space-x-2 mx-12">
       <span className="text-4xl font-bold text-career font-chloe">
     Career Insights
@@ -35,6 +37,7 @@ const Navbar: React.FC = () => {
     <span className="w-3 h-3 bg-logo-cuatro rounded-full"></span>
   </div>
   </div>
+  </Link>
 
       {/* Right Side */}
       <div className="flex space-x-8">
