@@ -5,6 +5,7 @@ import Test from "../features/pages/Test";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Contact from "../pages/Contact";
+import DianaSection from "/workspaces/Career-Insights/src/pages/DianaSection.tsx";
 
 
 const AppRoutes = () => (
@@ -14,6 +15,7 @@ const AppRoutes = () => (
       <Route path="/" element={<Home />} />
       <Route path="/test" element={<Test />} />
       <Route path="/contacto" element={<Contact />} />
+      <Route path="/metodo" element={<DianaSection />} />
     </Routes>
     <Footer></Footer>
   </BrowserRouter>
