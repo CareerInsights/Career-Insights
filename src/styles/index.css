@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @import './fonts.css';
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Ubuntu', sans-serif;
