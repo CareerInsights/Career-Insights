@@ -1,7 +1,7 @@
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-blue-400 text-white py-8">
+    <footer className="bg-[#85A9D2] text-white py-8">
       <div className="flex items-start justify-between w-full   px-8">
         {/* Left Side - Logo and Privacy/Terms */}
         <div className="flex flex-col space-y-4">
@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
 
         {/* Center - Links */}
         <div className="flex justify-center ">
-          <a href="#" className="hover:text-gray-200 m-5">Método</a>
-          <a href="#" className="hover:text-gray-200 m-5">Conócenos</a>
-          <a href="#" className="hover:text-gray-200 m-5">Servicio</a>
-          <a href="#" className="hover:text-gray-200 m-5">Contacto</a>
+          <a href="/metodo" className="hover:text-gray-200 m-5">Método</a>
+          <a href="#conocenos" className="hover:text-gray-200 m-5">Conócenos</a>
+          <a href="#servicios" className="hover:text-gray-200 m-5">Servicio</a>
+          <a href="/contacto" className="hover:text-gray-200 m-5">Contacto</a>
         </div>
 
         {/* Right Side - Social Media Icons */}

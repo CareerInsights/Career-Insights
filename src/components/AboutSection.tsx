@@ -94,7 +94,7 @@ const AboutSection: React.FC = () => (
       </div>
     </div>
     {/* Última fila: Card 5 centrada */}
-    <Link to={"/tecnica-diana"}>
+    <Link to={"/metodo"}>
     <div className="flex w-full max-w-8xl justify-center relative">
   {/* Sombra personalizada detrás */}
   <div className="absolute top-2 w-full md:w-2/3 h-full rounded-3xl bg-[#85A9D2] z-0"></div>
