@@ -6,6 +6,11 @@ import {
   CATEGORIES,
 } from "../data/questions";
 import type { CategoryKey } from "../data/questions";
+import emailjs from 'emailjs-com';
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
 
 const TOTAL_QUESTIONS = Object.keys(QUESTIONS).length;
 
@@ -14,6 +19,9 @@ export default function TestOrientacion() {
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});
   const [showResult, setShowResult] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
+  const [email, setEmail] = useState('');
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const qids = Object.keys(QUESTIONS).map(Number);
   const currentQid = qids[currentIndex];
@@ -92,6 +100,39 @@ export default function TestOrientacion() {
   };
 
   const results = getResults();
+
+  const resumenDelResultado = `
+Interés dominante: ${results.topInterest ? CATEGORIES[results.topInterest].name : 'N/A'} (${results.topInterest || ''})
+Puntaje: ${results.topInterestScore}
+Rasgos: ${results.topInterest ? CATEGORIES[results.topInterest].interests.join(", ") : ''}
+
+Aptitud dominante: ${results.topAptitude ? CATEGORIES[results.topAptitude].name : 'N/A'} (${results.topAptitude || ''})
+Puntaje: ${results.topAptitudeScore}
+Rasgos: ${results.topAptitude ? CATEGORIES[results.topAptitude].aptitudes.join(", ") : ''}
+`;
+
+  const sendResultByEmail = () => {
+    setSending(true);
+    emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      {
+        name: 'Participante del Test',      // O el nombre real si lo tienes
+        email: email,
+        result: resumenDelResultado,
+      },
+      USER_ID
+    ).then(
+      () => {
+        setSent(true);
+        setSending(false);
+      },
+      () => {
+        alert('Error al enviar el email');
+        setSending(false);
+      }
+    );
+  };
 
   if (showIntro) {
     return (
@@ -194,6 +235,27 @@ export default function TestOrientacion() {
               </>
             ) : <p>No hay aptitud dominante.</p>}
           </div>
+          {!sent ? (
+            <div className="mt-6 flex flex-col items-center">
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder="Tu correo electrónico"
+                className="border p-2 rounded mb-2 w-full max-w-xs"
+                required
+              />
+              <button
+                onClick={sendResultByEmail}
+                disabled={sending || !email}
+                className="bg-[var(--color-logo-cuatro)] text-white px-4 py-2 rounded"
+              >
+                {sending ? 'Enviando...' : 'Enviar resultado por email'}
+              </button>
+            </div>
+          ) : (
+            <p className="text-green-600 mt-4">¡Resultado enviado a tu correo!</p>
+          )}
           <button
             onClick={handleRestart}
             className="mt-6 px-6 py-3 bg-[#ffb7a1] hover:bg-[#ed7a6b] rounded-lg font-semibold text-white transition"
