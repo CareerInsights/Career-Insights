@@ -117,7 +117,7 @@ Rasgos: ${results.topAptitude ? CATEGORIES[results.topAptitude].aptitudes.join("
       SERVICE_ID,
       TEMPLATE_ID,
       {
-        name: 'Participante del Test',      // O el nombre real si lo tienes
+        name: 'Participante del Test',      
         email: email,
         result: resumenDelResultado,
       },
