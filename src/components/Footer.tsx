@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
         {/* Left Side - Logo and Privacy/Terms */}
         <div className="flex flex-col space-y-4">
           <h2 className="text-4xl font-bold">Career Insights</h2>
-          <a href="#" className="text-sm underline hover:text-gray-200">
+          <a href="/privacidad" className="text-sm underline hover:text-gray-200">
             Política de privacidad & términos de uso
           </a>
         </div>

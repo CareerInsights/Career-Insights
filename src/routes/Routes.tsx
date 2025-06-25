@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Contact from "../pages/Contact";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
+import DianaSection from "../pages/DianaSection";
 
 
 const AppRoutes = () => (
@@ -16,6 +17,7 @@ const AppRoutes = () => (
       <Route path="/test" element={<TestOrientacion />} />
       <Route path="/contacto" element={<Contact />} />
       <Route path="/privacidad" element={<PrivacyPolicy />} />
+      <Route path="/metodo" element={<DianaSection />} />
     </Routes>
     <Footer></Footer>
   </BrowserRouter>
