@@ -5,6 +5,7 @@ import TestOrientacion from "../features/pages/TestOrientacion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Contact from "../pages/Contact";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 
 const AppRoutes = () => (
@@ -14,6 +15,7 @@ const AppRoutes = () => (
       <Route path="/" element={<Home />} />
       <Route path="/test" element={<TestOrientacion />} />
       <Route path="/contacto" element={<Contact />} />
+      <Route path="/privacidad" element={<PrivacyPolicy />} />
     </Routes>
     <Footer></Footer>
   </BrowserRouter>
