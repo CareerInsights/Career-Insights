@@ -1,8 +1,8 @@
 import React from "react";
-import defineObjective from "/workspaces/Career-Insights/src/assets/image/define-objetive.svg";
-import addCircle from "/workspaces/Career-Insights/src/assets/image/add-circule.svg";
-import startHere from "/workspaces/Career-Insights/src/assets/image/start-here.svg";
-import expand from "/workspaces/Career-Insights/src/assets/image/expand.svg";
+import defineObjective from "../assets/image/define-objetive.svg";
+import addCircle from "../assets/image/add-circule.svg";
+import startHere from "../assets/image/start-here.svg";
+import expand from "../assets/image/expand.svg";
 import { Link } from "react-router-dom";
 import Diana from "/workspaces/Career-Insights/src/assets/image/Diana.svg"
 
@@ -113,7 +113,7 @@ const DianaSection: React.FC = () => {
                     {/* Botones */}
                     <div className="flex flex-col gap-6 md:w-[30%]">
 
-                        <Link to={"/"}>
+                        <Link to={"https://www.linkedin.com/company/careerinsights-es"}>
                             {/* LINKEDIN */}
                             <div className="relative">
                                 <div className="absolute inset-0 rounded-full bg-logo-cuatro translate-x-2 translate-y-2 z-0"></div>
@@ -125,7 +125,7 @@ const DianaSection: React.FC = () => {
 
 
                         {/* TIKTOK */}
-                        <Link to={"/"}>
+                        <Link to={"https://www.tiktok.com/@career_in_sights?is_from_webapp=1&sender_device=pc"}>
                             <div className="relative">
                                 <div className="absolute inset-0 rounded-full bg-logo-dos translate-x-2 translate-y-2 z-0"></div>
                                 <button className="relative w-full flex items-center justify-between px-6 py-3 rounded-full bg-white border border-yellow-300 text-black font-semibold z-10 shadow hover:bg-logo-dos transition text-xl">
