@@ -8,7 +8,7 @@ interface AuthContextType {
 
 // Contexto solo exporta la creación
 const AuthContext = createContext<AuthContextType>({
-  isLoggedIn: false,
+  isLoggedIn: true,
   toggleLogin: () => {},
 });
 
