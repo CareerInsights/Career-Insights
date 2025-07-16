@@ -15,7 +15,7 @@ const sessions = [
     ),
     img: SesionImg,
     alt: "Sesión 1 a 1",
-    onClick: undefined,
+    onClick: "/sesion-1a1",
   },
   {
     title: (
@@ -54,7 +54,7 @@ const SessionSelector: React.FC = () => {
               `bg-white rounded-2xl border border-color-logo-tres flex flex-col items-center p-8 w-80 cursor-pointer transition-shadow duration-300 font-ubuntu-regular shadow-md hover:shadow-[8px_8px_0_0_var(--color-logo-tres)]`
             }
             style={{ borderColor: "var(--color-logo-tres)" }}
-            onClick={session.onClick ? () => navigate(`/${session.onClick}`) : undefined}
+            onClick={session.onClick ? () => navigate(session.onClick) : undefined}
           >
             <img src={session.img} alt={session.alt} className="mb-6 h-48" />
             <div className="text-xl font-bold text-center font-quicksand">{session.title}</div>
