@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import React from "react";
 
 type NavLinkProps = {
   to: string;
@@ -27,9 +28,34 @@ export function NavLink({ to, type = "link", children }: NavLinkProps) {
     after:origin-left
   `;
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   if (type === "anchor") {
+    const [pathname, hash] = to.split("#");
+    const sectionId = hash;
+    const isHome = location.pathname === "/";
+
+    const handleClick = (e: React.MouseEvent) => {
+      e.preventDefault();
+      if (isHome && sectionId) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else {
+          // fallback: setTimeout in case not mounted yet
+          setTimeout(() => {
+            const el2 = document.getElementById(sectionId);
+            if (el2) el2.scrollIntoView({ behavior: "smooth" });
+          }, 300);
+        }
+      } else {
+        navigate(`/?scrollTo=${sectionId}`);
+      }
+    };
+
     return (
-      <a href={to} className={className}>
+      <a href={to} className={className} onClick={handleClick}>
         {children}
       </a>
     );
