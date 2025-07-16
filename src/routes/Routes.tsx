@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Contact from "../pages/Contact";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import DianaSection from "../pages/DianaSection";
+import Sesion1a1 from "../pages/Sesion1a1";
 
 
 const AppRoutes = () => (
@@ -18,6 +19,7 @@ const AppRoutes = () => (
       <Route path="/contacto" element={<Contact />} />
       <Route path="/privacidad" element={<PrivacyPolicy />} />
       <Route path="/metodo" element={<DianaSection />} />
+      <Route path="/sesion-1a1" element={<Sesion1a1 />} />
     </Routes>
     <Footer></Footer>
   </BrowserRouter>
