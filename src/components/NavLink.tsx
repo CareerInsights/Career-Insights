@@ -32,7 +32,7 @@ export function NavLink({ to, type = "link", children }: NavLinkProps) {
   const location = useLocation();
 
   if (type === "anchor") {
-    const [pathname, hash] = to.split("#");
+    const [, hash] = to.split("#");
     const sectionId = hash;
     const isHome = location.pathname === "/";
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import contacUs from "../assets/image/Contact us-rafiki.svg"
-import { Link } from "react-router-dom";
 
 const initialForm = {
   name: "",
