@@ -35,7 +35,7 @@ const sessions = [
     ),
     img: TalleresImg,
     alt: "Talleres y charlas",
-    onClick: undefined,
+    onClick: "/talleres-charlas",
   },
 ];
 
