@@ -5,9 +5,10 @@ type NavLinkProps = {
   to: string;
   type?: "link" | "anchor";
   children: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLSpanElement>;
 };
 
-export function NavLink({ to, type = "link", children }: NavLinkProps) {
+export function NavLink({ to, type = "link", children, onClick }: NavLinkProps) {
   const className = `
     text-gray-800
     font-medium
@@ -55,14 +56,14 @@ export function NavLink({ to, type = "link", children }: NavLinkProps) {
     };
 
     return (
-      <a href={to} className={className} onClick={handleClick}>
+      <a href={to} className={className} onClick={e => { handleClick(e); if (onClick) onClick(e); }}>
         {children}
       </a>
     );
   }
 
   return (
-    <Link to={to} className={className}>
+    <Link to={to} className={className} onClick={onClick}>
       {children}
     </Link>
   );
