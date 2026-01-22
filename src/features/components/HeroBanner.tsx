@@ -1,5 +1,5 @@
 import React from "react";
-import banner from "../../assets/image/Selecting team-rafiki.svg"
+import banner from "../../assets/image/Selecting team-rafiki.svg";
 // import { Link } from "react-router-dom";
 
 const HeroBanner: React.FC = () => {
@@ -10,13 +10,13 @@ const HeroBanner: React.FC = () => {
       }
     };
     return (
-        <div className="relative flex justify-center items-center min-h-[400px] md:min-h-[600px] bg-transparent overflow-visible">
-          <div className="relative z-10 bg-white rounded-[32px] md:rounded-[48px] border border-logo-dos shadow-lg flex flex-col md:flex-row items-center w-full max-w-6xl md:max-w-7xl min-h-[300px] px-4 md:px-12 py-4">
-            <div className="flex-1 flex justify-center items-center w-full md:w-[500px] md:h-[500px] overflow-hidden">
-          <img
-            src={banner}
-            alt="Ilustración"
-            className="w-full h-auto max-w-[800px] object-contain"
+      <div className="relative flex justify-center items-center min-h-[400px] md:min-h-[600px] bg-transparent overflow-visible">
+        <div className="relative z-10 bg-white rounded-[32px] md:rounded-[48px] border border-logo-dos shadow-lg flex flex-col md:flex-row items-center w-full max-w-6xl md:max-w-7xl min-h-[300px] px-4 md:px-12 py-4">
+          <div className="flex-1 flex justify-center items-center w-full md:w-[500px] md:h-[500px] overflow-hidden">
+            <img
+              src={banner}
+              alt="Ilustración"
+              className="w-full h-auto max-w-[800px] object-contain"
             />
           </div>
           <div className="flex-1 flex flex-col justify-center items-start pl-0 md:pl-4">
@@ -37,7 +37,7 @@ const HeroBanner: React.FC = () => {
           </div>
         </div>
       </div>
-    );
-  };
+      );
+};
 
 export default HeroBanner;

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const { isLoggedIn } = useAuth();
-
   const filteredItems = navItems.filter(item => !item.requiresAuth || isLoggedIn);
   const leftItems = filteredItems.slice(0, 2);
   const rightItems = filteredItems.slice(2);
@@ -23,7 +22,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Center - Logo */}
-      <Link to={"/"} className="justify-self-center">
+      <Link to={'/'} className="justify-self-center">
         <div className="flex items-center space-x-2">
           <span className="text-2xl md:text-4xl font-bold text-career font-chloe whitespace-nowrap">Career Insights</span>
           <div className="flex space-x-1">
