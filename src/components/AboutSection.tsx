@@ -36,7 +36,7 @@ const cards = [
 const AboutSection: React.FC = () => (
   <section id="conocenos" className="w-full flex flex-col items-center gap-10 py-8">
     {/* Técnica Diana destacada */}
-    <Link to="/metodo" className="w-full flex justify-center">
+    <Link to="/blog" className="w-full flex justify-center">
       <div className="relative flex flex-col md:flex-row items-center bg-white rounded-3xl border-2 border-blue-200 shadow-md p-10 gap-8 max-w-5xl w-full hover:shadow-lg transition-all cursor-pointer">
         <div className="flex-1 flex justify-center items-center mb-6 md:mb-0">
           <img src={Diana} alt="Técnica Diana" className="w-48 h-48 object-contain" />

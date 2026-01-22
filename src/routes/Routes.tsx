@@ -9,6 +9,7 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import DianaSection from "../pages/DianaSection";
 import TalleresCharlasPage from "../pages/TalleresCharlasPage";
 import Sesion1a1 from "../pages/Sesion1a1";
+import Blog from "../pages/Blog";
 
 
 
@@ -21,6 +22,7 @@ const AppRoutes = () => (
       <Route path="/contacto" element={<Contact />} />
       <Route path="/privacidad" element={<PrivacyPolicy />} />
       <Route path="/metodo" element={<DianaSection />} />
+      <Route path="/blog" element={<Blog />} />
       <Route path="/talleres-charlas" element={<TalleresCharlasPage />} />
       <Route path="/sesion-1a1" element={<Sesion1a1 />} />
     </Routes>

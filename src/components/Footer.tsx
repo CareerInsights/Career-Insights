@@ -1,25 +1,25 @@
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#85A9D2] text-white py-8">
-      <div className="flex flex-col md:flex-row items-center md:items-start justify-between w-full px-4 md:px-8 gap-8 md:gap-0">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-8 px-6 md:px-8">
         {/* Left Side - Logo and Privacy/Terms */}
-        <div className="flex flex-col items-center md:items-start space-y-2 md:space-y-4 mb-4 md:mb-0">
+        <div className="flex flex-col space-y-4">
           <h2 className="text-2xl md:text-4xl font-bold">Career Insights</h2>
           <a href="/privacidad" className="text-sm underline hover:text-gray-200">
             Política de privacidad & términos de uso
           </a>
         </div>
 
-        {/* Center - Links (siempre horizontal) */}
-        <div className="flex flex-row items-center justify-center gap-2 md:gap-0">
-          <a href="/metodo" className="hover:text-gray-200 m-2 md:m-5">Método</a>
-          <a href="/#conocenos" className="hover:text-gray-200 m-2 md:m-5">Conócenos</a>
-          <a href="/#servicios" className="hover:text-gray-200 m-2 md:m-5">Servicio</a>
-          <a href="/contacto" className="hover:text-gray-200 m-2 md:m-5">Contacto</a>
+        {/* Center - Links */}
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+          <a href="/#conocenos" className="hover:text-gray-200">Conócenos</a>
+          <a href="/#servicios" className="hover:text-gray-200">Servicio</a>
+          <a href="/contacto" className="hover:text-gray-200">Contacto</a>
+          <a href="/blog" className="hover:text-gray-200">Blog</a>
         </div>
 
         {/* Right Side - Social Media Icons */}
-        <div className="flex flex-col items-center md:items-end space-y-2">
+        <div className="flex flex-col items-start md:items-end space-y-2">
           <p className="text-sm">Síguenos en redes sociales</p>
           <div className="flex space-x-4">
             {/* LinkedIn */}

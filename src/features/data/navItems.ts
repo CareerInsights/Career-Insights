@@ -8,9 +8,9 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { name: 'MÉTODO', href: '/metodo', type: 'link' },
   { name: 'CONÓCENOS', href: '/#conocenos', type: 'anchor' },
   { name: 'SERVICIOS', href: '/#servicios', type: 'anchor' },
   { name: 'CONTACTO', href: '/contacto', type: 'link' },
+  { name: 'BLOG', href: '/blog', type: 'link' },
   { name: 'MI PERFIL', href: '/perfil', type: 'link', requiresAuth: true },
 ];
