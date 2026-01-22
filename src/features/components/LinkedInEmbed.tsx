@@ -14,6 +14,14 @@ function buildEmbedSrc(url: string): string | null {
   const activityMatch = decoded.match(/activity-(\d+)/);
   if (activityMatch?.[1]) return `https://www.linkedin.com/embed/feed/update/urn:li:activity:${activityMatch[1]}`;
 
+  // Support slugs like ...-ugcPost-<id>-...
+  const ugcPostSlug = decoded.match(/ugcPost-(\d+)/);
+  if (ugcPostSlug?.[1]) return `https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:${ugcPostSlug[1]}`;
+
+  // Support slugs like ...-share-<id>-...
+  const shareSlug = decoded.match(/share-(\d+)/);
+  if (shareSlug?.[1]) return `https://www.linkedin.com/embed/feed/update/urn:li:share:${shareSlug[1]}`;
+
   const urnMatch = decoded.match(/urn:li:(ugcPost|share|activity):(\d+)/);
   if (urnMatch?.[1] && urnMatch?.[2]) return `https://www.linkedin.com/embed/feed/update/urn:li:${urnMatch[1]}:${urnMatch[2]}`;
 
