@@ -12,8 +12,8 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="grid grid-cols-[1fr_auto_1fr] items-center px-4 md:px-8 py-4 border-b-2 border-border-navbar w-full">
-      {/* Left Side */}
-      <div className="flex space-x-4 md:space-x-8 justify-self-start">
+      {/* Left Side (pegado al logo) */}
+      <div className="flex space-x-4 md:space-x-8 justify-self-end mr-6 md:mr-12">
         {leftItems.map(item => (
           <NavLink key={item.name} to={item.href} type={item.type}>
             {item.name}
@@ -34,8 +34,8 @@ const Navbar: React.FC = () => {
         </div>
       </Link>
 
-      {/* Right Side */}
-      <div className="flex space-x-4 md:space-x-8 justify-self-end">
+      {/* Right Side (pegado al logo) */}
+      <div className="flex space-x-4 md:space-x-8 justify-self-start ml-6 md:ml-12">
         {rightItems.map(item => (
           <NavLink key={item.name} to={item.href} type={item.type}>
             {item.name}
