@@ -28,6 +28,13 @@ function buildEmbedSrc(url: string): string | null {
   const encodedUrnMatch = decoded.match(/urn%3Ali%3A(activity|ugcPost|share)%3A(\d+)/);
   if (encodedUrnMatch?.[1] && encodedUrnMatch?.[2]) return `https://www.linkedin.com/embed/feed/update/urn:li:${encodedUrnMatch[1]}:${encodedUrnMatch[2]}`;
 
+  // Support query param updateUrn=urn:li:activity:<id>
+  const updateUrnParam = decoded.match(/updateUrn=urn:li:(activity|ugcPost|share):(\d+)/);
+  if (updateUrnParam?.[1] && updateUrnParam?.[2]) return `https://www.linkedin.com/embed/feed/update/urn:li:${updateUrnParam[1]}:${updateUrnParam[2]}`;
+
+  // Known non-embeddable content types -> fallback to link
+  if (/linkedin\.com\/(pulse|newsletters|learning|events)\//.test(decoded)) return null;
+
   // Fallback: try to pass the original URL if it contains /posts/ or /feed/update/ (may not always work)
   if (/linkedin\.com\/.+/.test(decoded)) return null;
   return null;
