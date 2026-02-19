@@ -111,11 +111,11 @@ const Contact: React.FC = () => {
               <h2 className="font-bold mb-2 text-lg text-logo-cuatro">Información de contacto</h2>
               <div className="flex items-center gap-2">
                 <svg className="text-logo-cuatro" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M21 8V7l-3 2-2-2-2 2-2-2-2 2-2-2-3 2v1l3-2 2 2 2-2 2 2 2-2 3 2z"/><path d="M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8.5l9 5.25 9-5.25z"/></svg>
-                <span className="text-sm">Email: <a href="mailto:soporte@careerinsights.com" className="text-logo-cuatro underline">soporte@careerinsights.com</a></span>
+                <span className="text-sm">Email: <a href="mailto:talentandcareerses@gmail.com" className="text-logo-cuatro underline">talentandcareerses@gmail.com</a></span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="text-logo-cuatro" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.35.27 2.67.76 3.88a1 1 0 0 1-.21 1.11l-2.2 2.2z"/></svg>
-                <span className="text-sm">Teléfono: <a href="tel:+34123456789" className="text-logo-cuatro underline">+34 123 456 789</a></span>
+                <span className="text-sm">Teléfono: <a href="tel:+34652764972" className="text-logo-cuatro underline">+34 652 764 972</a></span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="text-logo-cuatro" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6 0 1.31.42 2.52 1.13 3.5C8.48 15.36 10.18 16 12 16s3.52-.64 4.87-1.5A5.978 5.978 0 0 0 18 12c0-3.31-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
@@ -139,7 +139,7 @@ const Contact: React.FC = () => {
                   </button>
                 </div>
               </a>
-              <a href="mailto:soporte@careerinsights.com">
+              <a href="mailto:talentandcareerses@gmail.com">
                 <div className="relative">
                   <div className="absolute inset-0 rounded-full bg-logo-uno translate-x-2 translate-y-2 z-0"></div>
                   <button className="relative w-full flex items-center justify-between px-6 py-3 rounded-full bg-white border border-red-300 text-black font-semibold z-10 shadow hover:bg-logo-uno transition text-xl">
