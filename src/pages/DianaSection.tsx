@@ -135,7 +135,7 @@ const DianaSection: React.FC = () => {
                         </Link>
 
                         {/* EMAIL */}
-                        <Link to={"/"}>
+                        <Link to={"mailto:talentandcareerses@gmail.com"}>
                             <div className="relative">
                                 <div className="absolute inset-0 rounded-full bg-logo-uno translate-x-2 translate-y-2 z-0"></div>
                                 <button className="relative w-full flex items-center justify-between px-6 py-3 rounded-full bg-white border border-red-300 text-black font-semibold z-10 shadow hover:bg-logo-uno transition text-xl">

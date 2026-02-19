@@ -10,6 +10,9 @@ import DianaSection from "../pages/DianaSection";
 import TalleresCharlasPage from "../pages/TalleresCharlasPage";
 import Sesion1a1 from "../pages/Sesion1a1";
 import Blog from "../pages/Blog";
+import Junior from "../pages/Junior";
+import Senior from "../pages/Senior";
+import Empresa from "../pages/Empresa";
 
 
 
@@ -25,6 +28,9 @@ const AppRoutes = () => (
       <Route path="/blog" element={<Blog />} />
       <Route path="/talleres-charlas" element={<TalleresCharlasPage />} />
       <Route path="/sesion-1a1" element={<Sesion1a1 />} />
+      <Route path="/junior" element={<Junior />} />
+      <Route path="/senior" element={<Senior />} />
+      <Route path="/empresa" element={<Empresa />} />
     </Routes>
     <Footer></Footer>
   </BrowserRouter>
