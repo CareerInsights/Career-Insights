@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import SesionImg from "../assets/image/Face to face-amico.svg";
 import OrientacionImg from "../assets/image/User research-bro.svg";
 import TalleresImg from "../assets/image/Seminar-bro.svg";
+import StartupLifeImg from "../assets/image/Startup life-cuate.svg";
 
 const sessionsCareer = [
   {
@@ -24,6 +25,16 @@ const sessionsCareer = [
     img: TalleresImg,
     alt: "Empresa",
     onClick: "/empresa",
+  },
+  {
+    title: (
+      <>
+        IT BASICS <br /> FOR EARLY TEAMS
+      </>
+    ),
+    img: StartupLifeImg,
+    alt: "IT Basics for Early Teams",
+    onClick: "/it-basics",
   },
 ];
 
@@ -95,7 +106,7 @@ const SessionSelector: React.FC<SessionSelectorProps> = ({
           {headingText}
         </h2>
       )}
-      <div className="flex flex-col md:flex-row gap-8 justify-center items-center w-full">
+      <div className="flex flex-col md:flex-row md:flex-nowrap gap-8 justify-center items-center w-full">
         {sessions.map((session, idx) => (
           <div
             key={idx}

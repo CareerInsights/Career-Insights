@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { submitFormspree } from "../utils/formspree";
 import contacUs from "../assets/image/Contact us-rafiki.svg"
 
 const initialForm = {
@@ -15,13 +16,16 @@ const Contact: React.FC = () => {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: { [key: string]: string } = {};
     if (!form.name) newErrors.name = "Name is required";
@@ -30,8 +34,24 @@ const Contact: React.FC = () => {
     if (!form.message) newErrors.message = "Message is required";
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      setSubmitted(true);
-      setForm(initialForm);
+      setIsSubmitting(true);
+      setSubmitted(false);
+      setSubmitError("");
+      try {
+        await submitFormspree(formspreeEndpoint, {
+          form: "contacto",
+          nombre: form.name,
+          email: form.email,
+          asunto: form.subject || "",
+          mensaje: form.message,
+        });
+        setSubmitted(true);
+        setForm(initialForm);
+      } catch (error) {
+        setSubmitError(error instanceof Error ? error.message : "Error al enviar");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -96,12 +116,16 @@ const Contact: React.FC = () => {
 
             <button
               type="submit"
-              className="mt-2 bg-logo-dos text-white font-bold py-2 rounded hover:bg-logo-cuatro transition-colors"
+              className="mt-2 bg-logo-dos text-white font-bold py-2 rounded hover:bg-logo-cuatro transition-colors disabled:opacity-60"
+              disabled={isSubmitting}
             >
-              Enviar
+              {isSubmitting ? "Enviando..." : "Enviar"}
             </button>
             {submitted && (
               <span className="text-green-600 text-sm mt-2">¡Mensaje enviado correctamente!</span>
+            )}
+            {submitError && (
+              <span className="text-red-500 text-sm mt-2">{submitError}</span>
             )}
           </form>
 

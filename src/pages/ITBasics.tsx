@@ -1,17 +1,9 @@
-import React, { useState } from "react";
-import WebinarImg from "../assets/image/Webinar-cuate.svg";
+import React, { useEffect, useState } from "react";
 import Modal from "../components/Modal";
 import { submitFormspree } from "../utils/formspree";
 
-const temas = [
-  "Cómo elegir carrera o formación",
-  "Competencias para el mundo laboral actual",
-  "Empleabilidad, marca personal y nuevas tendencias",
-  "Herramientas digitales para la búsqueda de empleo",
-];
-
 const initialForm = {
-  tipo: "centro",
+  tipo: "empresa",
   nombre: "",
   email: "",
   telefono: "",
@@ -20,7 +12,7 @@ const initialForm = {
 
 const validateEmail = (email: string) => /^\S+@\S+\.\S+$/.test(email);
 
-const TalleresCharlasPage: React.FC = () => {
+const ITBasics: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -28,6 +20,10 @@ const TalleresCharlasPage: React.FC = () => {
   const [submitError, setSubmitError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -49,7 +45,7 @@ const TalleresCharlasPage: React.FC = () => {
       setSubmitError("");
       try {
         await submitFormspree(formspreeEndpoint, {
-          form: "talleres-charlas",
+          form: "it-basics",
           tipo: form.tipo,
           nombre: form.nombre,
           email: form.email,
@@ -67,45 +63,78 @@ const TalleresCharlasPage: React.FC = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 py-8 bg-gray-50 min-h-screen">
-      {/* Header y sección principal */}
-      <div className="w-full max-w-5xl mx-auto mb-8">
-        <div className="bg-white rounded-[40px] border border-logo-dos shadow-lg flex flex-col md:flex-row items-center w-full p-8 md:p-12 mb-10">
-          <div className="flex-1 flex flex-col justify-center items-start">
-            <h1 className="text-4xl font-bold mb-4 text-logo-dos">TALLERES & CHARLAS</h1>
-            <p className="text-gray-700 text-lg mb-4">
-              Creamos y organizamos talleres y charlas interactivas para centros educativos, instituciones o empresas que buscan inspirar y orientar en temas actuales.
+    <section className="flex flex-col items-center justify-center px-4 py-10 bg-gray-50 min-h-screen">
+      <div className="w-full max-w-5xl mx-auto">
+        <div className="bg-white rounded-[40px] border border-logo-dos shadow-lg w-full p-8 md:p-12 mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold mb-6 text-logo-dos">
+            Soporte operativo para startups en fase inicial
+          </h1>
+
+          <p className="text-gray-700 text-lg mb-4">
+            ¿Necesitas poner en marcha tu operativa técnica básica para poder trabajar con fluidez desde el primer día?
+          </p>
+
+          <div className="text-gray-700 text-lg mb-6">
+            <p className="mb-2">Trabajamos con equipos que:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Están empezando y no tienen soporte técnico interno</li>
+              <li>Van a incorporar a sus primeras personas al equipo</li>
+              <li>Necesitan configurar equipos, accesos y herramientas</li>
+              <li>Quieren resolver incidencias técnicas sin distraer al equipo fundador del negocio</li>
+            </ul>
+            <p className="mt-4">
+              Es un servicio operativo, diseñado para cubrir necesidades concretas en momentos clave del arranque de la empresa.
             </p>
-            <button
-              type="button"
-              onClick={() => setModalOpen(true)}
-              className="bg-[#ffb7a1] hover:bg-[#ed7a6b] text-white font-semibold px-8 py-3 rounded-lg shadow-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-pink-500 inline-block text-center"
-            >
-              Solicita una propuesta
-            </button>
           </div>
-          <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
-            <img src={WebinarImg} alt="Talleres y charlas" className="w-[80%] max-w-xs" />
+
+          <div className="text-gray-700 text-lg mb-6">
+            <h2 className="text-2xl font-bold text-logo-dos mb-3">Qué cubre este servicio</h2>
+            <p className="mb-3">
+              El objetivo es ayudar a que la infraestructura básica de trabajo no se convierta en un freno para el equipo.
+            </p>
+            <p className="mb-2">Entre otros, este servicio puede incluir:</p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Configuración de equipos de trabajo</li>
+              <li>Puesta en marcha de accesos y herramientas básicas</li>
+              <li>Soporte técnico puntual (remoto o presencial)</li>
+              <li>Acompañamiento en el setup operativo inicial del equipo</li>
+              <li>Resolución de incidencias técnicas básicas</li>
+            </ul>
           </div>
+
+          <div className="text-gray-700 text-lg mb-6">
+            <h2 className="text-2xl font-bold text-logo-dos mb-3">Servicios técnicos que cubrimos</h2>
+            <p className="mb-3">
+              Este servicio está pensado para resolver necesidades operativas habituales en startups en fase inicial. Entre los servicios que ofrecemos se incluyen:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Configuración y puesta a punto de equipos de trabajo (portátiles, cuentas de usuario, accesos)</li>
+              <li>Preparación de equipos para nuevas incorporaciones</li>
+              <li>Configuración básica de herramientas de trabajo (correo, almacenamiento, herramientas colaborativas)</li>
+              <li>Soporte técnico puntual para incidencias habituales del día a día</li>
+              <li>Migración básica de equipos y datos cuando hay cambios de dispositivos</li>
+              <li>Configuración de red básica en espacios de trabajo pequeños</li>
+              <li>Acompañamiento en el setup operativo inicial de equipos remotos o híbridos</li>
+            </ul>
+            <p className="mt-4">
+              Estos servicios se ofrecen de forma puntual o en formato de soporte recurrente, según las necesidades del equipo y el momento de la startup.
+            </p>
+          </div>
+
+          <p className="text-gray-700 text-lg mb-8">
+            Si te interesa este servicio, el primer paso es una breve conversación para entender vuestras necesidades operativas y valorar si este tipo de soporte encaja con vuestro momento actual.
+          </p>
+
+          <button
+            type="button"
+            onClick={() => setModalOpen(true)}
+            className="bg-[#ffb7a1] hover:bg-[#ed7a6b] text-white font-semibold px-8 py-3 rounded-lg shadow-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-pink-500 inline-block text-center"
+          >
+            Solicita una propuesta
+          </button>
         </div>
       </div>
 
-      {/* Temas */}
-      <div className="w-full max-w-4xl flex flex-col items-center mb-12">
-        <h2 className="text-2xl font-bold text-logo-dos mb-6 text-center">Temas que podemos trabajar</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
-          {temas.map((tema, idx) => (
-            <div key={idx} className="flex items-center gap-4 bg-white border border-logo-dos rounded-2xl shadow-md p-5">
-              <span className="mt-1">
-                <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-logo-dos"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
-              </span>
-              <span className="text-gray-800 text-lg font-medium">{tema}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Modal con formulario */}
       <Modal
         open={modalOpen}
         onClose={() => {
@@ -191,4 +220,4 @@ const TalleresCharlasPage: React.FC = () => {
   );
 };
 
-export default TalleresCharlasPage; 
+export default ITBasics;
