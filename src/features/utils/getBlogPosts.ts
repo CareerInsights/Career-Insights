@@ -10,6 +10,8 @@ export type BlogPost = {
 };
 
 const DEFAULT_URL = "/data/blog-posts.json";
+const FALLBACK_REMOTE_URL =
+  "https://opensheet.elk.sh/1cw81WOPAAeqCp49YwEDDyUz_AjfZk_6KwcVebIjiik8/publicaciones";
 
 function normalizeToPosts(data: any): BlogPost[] {
   if (!Array.isArray(data)) return [];
@@ -89,14 +91,14 @@ function normalizeToPosts(data: any): BlogPost[] {
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
   const remoteUrl = import.meta.env?.VITE_BLOG_POSTS_URL as string | undefined;
-  const url = remoteUrl?.trim() || DEFAULT_URL;
+  const url = remoteUrl?.trim() || FALLBACK_REMOTE_URL || DEFAULT_URL;
   try {
     const res = await fetch(url, { headers: { Accept: "application/json" }, cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     const norm = normalizeToPosts(data);
     if (norm.length > 0) return norm;
-    if (remoteUrl && url !== DEFAULT_URL) {
+    if ((remoteUrl || FALLBACK_REMOTE_URL) && url !== DEFAULT_URL) {
       const fb = await fetch(DEFAULT_URL, { headers: { Accept: "application/json" }, cache: "no-store" });
       if (fb.ok) {
         const fbData = await fb.json();
@@ -105,7 +107,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
     }
     return [];
   } catch {
-    if (remoteUrl && url !== DEFAULT_URL) {
+    if ((remoteUrl || FALLBACK_REMOTE_URL) && url !== DEFAULT_URL) {
       try {
         const fb = await fetch(DEFAULT_URL, { headers: { Accept: "application/json" }, cache: "no-store" });
         if (!fb.ok) throw new Error();
