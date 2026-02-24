@@ -10,9 +10,11 @@ import DianaSection from "../pages/DianaSection";
 import TalleresCharlasPage from "../pages/TalleresCharlasPage";
 import Sesion1a1 from "../pages/Sesion1a1";
 import Blog from "../pages/Blog";
+import BlogPost from "../pages/BlogPost";
 import Junior from "../pages/Junior";
 import Senior from "../pages/Senior";
 import Empresa from "../pages/Empresa";
+import ITBasics from "../pages/ITBasics";
 
 
 
@@ -26,11 +28,13 @@ const AppRoutes = () => (
       <Route path="/privacidad" element={<PrivacyPolicy />} />
       <Route path="/metodo" element={<DianaSection />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/talleres-charlas" element={<TalleresCharlasPage />} />
       <Route path="/sesion-1a1" element={<Sesion1a1 />} />
       <Route path="/junior" element={<Junior />} />
       <Route path="/senior" element={<Senior />} />
       <Route path="/empresa" element={<Empresa />} />
+      <Route path="/it-basics" element={<ITBasics />} />
     </Routes>
     <Footer></Footer>
   </BrowserRouter>
